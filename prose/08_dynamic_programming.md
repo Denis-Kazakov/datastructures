@@ -54,7 +54,7 @@ print(recMC([1, 21, 25],63))
 print(recMC([1, 5, 21, 25],63))
 ```
 
-This works, but it's very slow.  A natural thing to try here is to **memoize** solutions from previous recursive calls.
+This works, but it's very slow. (We assume that a solution exists and the smallest coin value is 1. Otherwise the above code will give the same answer for recMC([1, 21, 25],63) and recMC([2, 21, 25],63).) A natural thing to try here is to **memoize** solutions from previous recursive calls.
 This way, we don't repeat work by computing the number of coins for a specific amount of change more than one time.
 Don't forget to pass along the dictionary of known results when making recursive calls.
 
