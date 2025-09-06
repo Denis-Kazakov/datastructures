@@ -24,12 +24,16 @@ If our goal is to find the second largest item in a list, we could do this in li
 
 ```python
 def secondsmallest(L):
-    a, b = None, None
-    for item in L:
-        if a is None or item <= b:
-            a, b = item, a
-        elif b is None or item <= a:
-            b = item
+    if len(L) < 2:
+        return None
+    a, b = L[0], L[1]
+    if a > b:
+        a, b = b, a
+    for i in range(2, len(L)):
+        if L[i] <= a:
+            a, b = L[i], a
+        elif L[i] < b:
+            b = L[i]
     return b
 ```
 
